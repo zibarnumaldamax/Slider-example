@@ -6,6 +6,7 @@ const slider = document.querySelector(".slider");
 const sliderContainer = document.querySelector(".slider-container");
 const sliderValue = document.querySelector(".slider-value");
 const sliderRuler = document.querySelector(".slider-ruler");
+const sliderTrack = document.querySelector(".slider-track");
 
 const step = 10;
 const max = 100;
@@ -38,6 +39,10 @@ sliderRuler.addEventListener("mousedown", () => {
   isDown = true;
 });
 
+sliderTrack.addEventListener("mousedown", () => {
+  isDown = true;
+});
+
 wrapper.addEventListener("mouseup", () => {
   isDown = false;
 });
@@ -50,6 +55,7 @@ wrapper.addEventListener("mousemove", (event) => {
 
     slider.style.left = `${x}px`;
     sliderValue.style.left = `${x}px`;
+    sliderTrack.style.width = `${x+1}px`;
 
     const percentage = (x / (sliderContainer.clientWidth - slider.clientWidth)) * 100;
     const value = Math.round((percentage / 100) * max);

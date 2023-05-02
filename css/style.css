@@ -22,11 +22,22 @@
   position: absolute;
   bottom: 20px;
   left: 0;
+  z-index: 1;
 }
 
 .slider-ruler label {
   position: absolute;
   bottom: -25px;
+}
+
+.slider-track {
+  width: 0;
+  height: 10px;
+  background-color: #555;
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  z-index: 2;
 }
 
 .slider {
@@ -36,6 +47,7 @@
   position: absolute;
   left: 0;
   border-radius: 50%;
+  z-index: 3;
   cursor: pointer;
 }
 
